@@ -3,10 +3,10 @@ class Worker {
   constructor(name, lastName, days, salary, premium) {
 
     if(salary < 0) {
-      throw new TypeError ('Salary must be positive')
+      throw new TypeError ('Salary must be positive');
     }
     if(days < 0) {
-      throw new TypeError ('Days must be positive')
+      throw new TypeError ('Days must be positive');
     }
     if(premium === true) {
       salary = salary + (salary * 0.25);
