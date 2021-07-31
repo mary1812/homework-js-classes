@@ -1,32 +1,31 @@
-"use strict";
 
-class CoolerHuman {
-  constructor(name, lastName, age) {
-    //проверка что пользователь имеет не отрицательный возраст при создании
-    if (isNaN(age) || typeof age !== "number") {
-      throw new TypeError("Age must be number");
+class Worker {
+  constructor(name, lastName, days, salary, premium) {
+
+    if(salary < 0) {
+      throw new TypeError ('Salary must be positive')
     }
-    //проверка что пользователь имеет возраст больше нуля
-    if (age < 0) {
-      throw new TypeError("Age must be positive number");
+    if(days < 0) {
+      throw new TypeError ('Days must be positive')
     }
-    //свойства создаваемого экземпляра класса
+    if(premium === true) {
+      salary = salary + (salary * 0.25);
+    }
+
     this.name = name;
     this.lastName = lastName;
-    this.age = age;
+    this.days = days;
+    this.salary = salary;
+    this.premium = premium;
   }
-  //методы у экземпляров класса
-  walk() {
-    console.log("I am walking");
+
+  getFullName() {
+    return `${this.name} ${this.lastName}`;
   }
-  //создать метод isAdult, к-рый будет возвращать является ли конкретный пользователь совершеннолетним или нет
-  isAdult() {
-    return this.age >= 18;
+  getSalary() {
+    return this.days * this.salary;
   }
 }
 
-const coolerHuman1 = new CoolerHuman("Coolkid", "Coolkidovich", -50);
-
-const coolerHuman2 = new CoolerHuman("Coolkid", "Coolkidovich", "rhr");
-
-const coolerHuman3 = new CoolerHuman("Human", "Humanovich", 18);
+const worker1 = new Worker('Test', 'Testovich', 30, 300, true);
+const worker2 = new Worker('Text', 'Textovich', 15, 150, false);
