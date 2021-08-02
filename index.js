@@ -9,7 +9,7 @@ class Worker {
       throw new TypeError("Salary must be number");
     }
     if (salary < 0) {
-      throw new TypeError("Salary must be positive");
+      throw new RangeError("Salary must be positive");
     }
 
     this.name = name;
