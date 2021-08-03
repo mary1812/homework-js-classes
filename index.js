@@ -37,3 +37,4 @@ const worker1 = new Worker("Test", "Testovich", 30, 100, true);
 const worker2 = new Worker("Text", "Textovich", 15, 50, false);
 
 
+
