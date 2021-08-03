@@ -1,4 +1,5 @@
 "use strict"
+
 const PREMIUM_COEFFICIENT = 1.25;
 
 class Worker {
