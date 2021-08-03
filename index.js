@@ -9,7 +9,10 @@ class Worker {
       throw new TypeError("Salary must be number");
     }
     if (salary < 0) {
-      throw new TypeError("Salary must be positive");
+      throw new TypeError("Salary must be positive number");
+    }
+    if(days < 0) {
+      throw new TypeError("Days must be positive number");
     }
 
     this.name = name;
@@ -32,3 +35,5 @@ class Worker {
 
 const worker1 = new Worker("Test", "Testovich", 30, 100, true);
 const worker2 = new Worker("Text", "Textovich", 15, 50, false);
+
+
